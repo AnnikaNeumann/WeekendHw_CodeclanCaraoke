@@ -1,25 +1,31 @@
-from mimetypes import guess_all_extensions
+# testing the guests
+
 import unittest
-from src.guest_test import *
-from src.room import *
-from src.song import *
 
-class GuestTest(unittest.TestCase):
-    def setUp(self, guestList):
-        self.guestList = guestList
+from classes.guest import Guest
+from classes.room import Room
+from classes.song import Song
 
-
-
+class TestGuest(unittest.TestCase):
+    def setUp(self):
+        self.guest_1 = Guest(43, 25, "Captain Picard" )
+        self.guest_2 = Guest(37, 18, "Captain Janeway")
+        self.guest_3 = Guest(30, 5, "Commander Riker")
+        self.guest_4 = Guest(40, 10, "Commander Chakotay")
 
 
 
     #Test to check guests in and out of rooms
-    def test_check_guest_in(self, guest, room):
-        self.assertEqual(self.name.codeclan_caraoke(self.name, self.room))
+    def test_check_guest_in(self):
+        self.room
+        self.assertEqual(self.name, self.room)
+
+    def test_check_guest_out(self, guest):
+        self.assertEqual(self.guest, self.room)
+
+# Test to add songs to a room
+
+    def test_add_song_to_room(self):
+        self.assertEqualself(self.name, "")
 
 
-    def test_check_guest_out(self, guest, room):
-        self.assertEqual(self.name.codeclan_caraoke(self.name, self.room))
-
-    def test_add_song_to_room(self, song, room):
-        self.assertEqual(self.name.codeclan_caraoke(self.name, "Crawling"))

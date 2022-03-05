@@ -1,14 +1,17 @@
 import unittest
-from src.guest import *
-from src.room import *
-from src.song import *
+from classes.guest import *
+from classes.room import *
+from classes.song import *
 
 
-class SongTest(unittest.TestCase):
+class TestSong(unittest.TestCase):
     def setUp(self):
-        self.title = "Don't You Forget About Me"
-        self.title = "Crawling"
-        self.title = "Last Resort"
-        self.title = "Enter Sandman"
 
-    
+        self.title_1 = "Chop Suey"
+        self.title_2 = "Crawling"
+        self.title_3 = "Last Resort"
+        self.title_4 = "Enter Sandman"
+
+
+def test_room_has_song(self):
+    self.assertEqual(self.room.self.title_4)
