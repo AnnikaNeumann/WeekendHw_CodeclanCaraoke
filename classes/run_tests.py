@@ -1,5 +1,7 @@
 import unittest
-from tests.caraoke_tests import codeclan_caraoke
+from tests.guest_test import codeclan_caraoke
+
+# run_tests.py
 
 if __name__ == "__main__":
     unittest.main()
