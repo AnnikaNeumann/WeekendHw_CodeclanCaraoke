@@ -5,33 +5,36 @@
 #         self.roomlist= roomlist
 
 class Room:
-    def __init__(self, room_name, max_guests, song, price):
-        self.room_name = room_name
-        self.max_guests = 5
-        self.song = song
+    def __init__(self, name, max_guests, price):
+        self.name = name
+        self.max_guests = max_guests
+        self.songs = []
         self.price = price 
+        self.guests_in_room = []
+
+# method to add a guest to a room
+
+    def add_guest_to_room(self,guest):
+        self.guests_in_room.append(guest)
+
+    def remove_guest_to_room(self,guest):
+        self.guests_in_room.remove(guest)
+
+    def guest_count(self):
+        return len(self.guests_in_room)
+
+    def add_song_to_room(self,song):
+        self.songs.append(song)
+
+    def remove_song_from_room(self,song):
+        self.songs.remove(song)
 
 
-    def check_in_guest(self, guest):
-        self.guest.append(guest.guest_name_1)
-    
 
-    def check_out_guest(self, guest):
-        self.guest.remove(guest.name_1)
-
-    def add_song_to_room(self, song):
-        self.room.append(song.title_2, song.title_3)
-
-    def remove_song_from_room(self, song):
-        self.room.remove(song.title_3)
-
-    def check_max_guest_content(self, guest):
-        if self.max_content >= 5:
-            return ("This room is busy singing")
-    
 ### Extensions
 
 # - What happens if there are more guests trying to be checked in than there is free space in the room?
 # - Karaoke venues usually have an entry fee - So the guests could have money so they can pay it.
+
 
 
