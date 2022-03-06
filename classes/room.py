@@ -1,8 +1,3 @@
-# class Room:
-#     roomlist=[room1, room2]
-
-#     def __init__(self, roomlist):
-#         self.roomlist= roomlist
 
 from operator import truediv
 
@@ -18,7 +13,13 @@ class Room:
 # method to add a guest to a room
 
     def add_guest_to_room(self,guest):
-        self.guests_in_room.append(guest)
+        if(self.guest_count() < self.max_guests):
+            if(guest.cash > self.price):
+                self.guests_in_room.append(guest)
+            else:
+                print("You dont have enough monies!")
+        else:
+            print("Max guest count reached")
 
     def remove_guest_to_room(self,guest):
         self.guests_in_room.remove(guest)
@@ -42,10 +43,7 @@ class Room:
         return False
 
 
-### Extensions
 
-# - What happens if there are more guests trying to be checked in than there is free space in the room?
-# - Karaoke venues usually have an entry fee - So the guests could have money so they can pay it.
 
 
 
