@@ -24,8 +24,8 @@ class TestRoom(unittest.TestCase):
 
 # set up the playlist
 
-        # self.title_1 = Song("Chop Suey")
-        # self.title_2 = Song("Crawling")
+        self.song_1 = Song("Chop Suey")
+        self.song_2 = Song("Crawling")
         # self.title_3 = Song("Last Resort")
         # self.title_4 = Song("Enter Sandman")
 
@@ -52,27 +52,26 @@ class TestRoom(unittest.TestCase):
         self.room_1.remove_guest_to_room(self.guest_1)
         self.assertEqual(self.room_1.guest_count(),1)
 
+    def test_add_song_to_room(self):
+        self.room_1.add_song_to_room(self.song_1)
+        self.assertEqual(self.room_1.song_count(),1)
 
+    def test_remove_song_from_room(self):
+        self.room_1.add_song_to_room(self.song_1)
+        self.room_1.add_song_to_room(self.song_2)
+        self.assertEqual(self.room_1.song_count(),2)
+        self.room_1.remove_song_from_room(self.song_2)
+        self.assertEqual(self.room_1.song_count(),1)
 
-# test to check room has price
-    # def room_has_price(self):       
-    #     self.assertEqual(self.price)
+    def test_check_for_guest_by_name(self):
+        self.room_1.add_guest_to_room(self.guest_1)
+        self.assertEqual(self.room_1.check_for_guest_by_name("Captain Picard"),True)
+    
+    def test_check_for_guest_by_name(self):
+        self.room_1.add_guest_to_room(self.guest_2)
+        self.assertEqual(self.room_1.check_for_guest_by_name("Tom Hanks"),False)
 
-# test to check in/out the guests
-
-        # def test_check_guest_in(self):
-        #         self.room.check_in_guest(self.guest.name)
-        #         self.assertEqual("Commander Chakotay", self.room_1)
-
-        # def test_check_guest_in(self):
-        #         self.room.check_in_guest(self.guest.name)
-        #         self.assertEqual("Captain Janeway", self.room)
-
-    # def test_check_guest_in(self):
-    #     self.room_3.check_in_guest(self.guest_3)
-    #     self.assertEqual("Commander Riker", self.room_3.guest)
-
-
+    
 
 
         

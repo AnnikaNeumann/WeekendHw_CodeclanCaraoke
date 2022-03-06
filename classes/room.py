@@ -4,6 +4,9 @@
 #     def __init__(self, roomlist):
 #         self.roomlist= roomlist
 
+from operator import truediv
+
+
 class Room:
     def __init__(self, name, max_guests, price):
         self.name = name
@@ -29,6 +32,14 @@ class Room:
     def remove_song_from_room(self,song):
         self.songs.remove(song)
 
+    def song_count(self):
+        return len(self.songs)
+
+    def check_for_guest_by_name(self,name):
+        for guest in self.guests_in_room:
+            if(name == guest.name):
+                return True
+        return False
 
 
 ### Extensions
